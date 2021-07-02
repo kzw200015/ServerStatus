@@ -3,6 +3,7 @@ package routes
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/kzw200015/ServerStatus/assets"
 	"github.com/kzw200015/ServerStatus/server/config"
 	"github.com/kzw200015/ServerStatus/server/handlers"
 	"github.com/kzw200015/ServerStatus/server/middlewares"
@@ -10,7 +11,7 @@ import (
 
 func CreateRouter() *gin.Engine {
 	r := gin.Default()
-	r.Use(middlewares.HandleErrors())
+	r.Use(middlewares.HandleErrors()).Use(middlewares.HandleStatics(assets.EFS))
 	api := r.Group("/api").Use(cors.Default())
 	{
 		api.GET("/nodes", handlers.HandleGetNodes)
