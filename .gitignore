@@ -1,0 +1,4 @@
+.vscode
+statics/dist
+server.yml
+client.yml
