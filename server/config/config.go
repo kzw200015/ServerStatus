@@ -10,6 +10,7 @@ import (
 var config Config
 
 type Config struct {
+	Port  int          `yaml:"port"`
 	Nodes []NodeConfig `yaml:"nodes"`
 }
 
