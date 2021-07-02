@@ -15,7 +15,7 @@ jobs:
           submodules: true
       - uses: actions/setup-node@v2
         with:
-          node-version: "lts"
+          node-version: "lts/*"
       - name: Build frontend
         working-directory: ./assets/frontend
         run: yarn && yarn build
