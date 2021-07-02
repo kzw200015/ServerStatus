@@ -1,0 +1,3 @@
+[submodule "assets/frontend"]
+	path = assets/frontend
+	url = ../ServerStatus-frontend
