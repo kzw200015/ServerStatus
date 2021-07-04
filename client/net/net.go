@@ -2,6 +2,7 @@ package net
 
 import (
 	"log"
+	"strings"
 	"time"
 
 	"github.com/kzw200015/ServerStatus/types"
@@ -31,7 +32,7 @@ func getRxAndTx() (uint64, uint64, error) {
 	var rx uint64
 	var tx uint64
 	for _, stat := range stats {
-		if stat.Name == "lo" {
+		if stat.Name == "lo" && strings.HasPrefix(stat.Name, "docker") && strings.HasPrefix(stat.Name, "br-") && strings.HasPrefix(stat.Name, "veth") {
 			continue
 		}
 		rx += stat.BytesRecv
