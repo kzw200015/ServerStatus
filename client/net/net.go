@@ -13,14 +13,9 @@ var rxSpeed uint64
 var txSpeed uint64
 
 func GetNetStatus() (types.NetStatus, error) {
-	rx, tx, err := getRxAndTx()
-	if err != nil {
-		return types.NetStatus{}, err
-	}
 	return types.NetStatus{
-		Count: rx + tx,
-		RX:    rxSpeed,
-		TX:    txSpeed,
+		RX: rxSpeed,
+		TX: txSpeed,
 	}, nil
 }
 

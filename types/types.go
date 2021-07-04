@@ -21,7 +21,6 @@ type SwapStatus struct {
 }
 
 type NetStatus struct {
-	Count uint64 `json:"count,omitempty"`
-	RX    uint64 `json:"rx,omitempty"`
-	TX    uint64 `json:"tx,omitempty"`
+	RX uint64 `json:"rx,omitempty"`
+	TX uint64 `json:"tx,omitempty"`
 }
