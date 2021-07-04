@@ -9,11 +9,10 @@
 配置文件`config.yml`
 ```
 port: 8080
+token: passwd
 nodes:
   - id: node1
-    token: passwd1
   - id: node2
-    token: passwd2
 ```
 运行
 ```
@@ -24,7 +23,7 @@ status -s -f config.yml
 ```
 server_url: https://example.com
 id: node1
-token: passwd1
+token: passwd
 ```
 运行
 ```
