@@ -2,3 +2,4 @@
 statics/dist
 server.yml
 client.yml
+__debug_bin
