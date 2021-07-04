@@ -15,6 +15,10 @@ type Node struct {
 	IsAlive bool   `json:"is_alive"`
 }
 
+func HandleGetTitle(c *gin.Context) {
+	c.String(http.StatusOK, config.Get().Title)
+}
+
 func HandleGetNodes(c *gin.Context) {
 	var resp = []Node{}
 	for _, node := range config.Get().Nodes {

@@ -8,6 +8,7 @@
 ### 服务端
 配置文件`config.yml`
 ```
+title: 服务器监控
 port: 8080
 token: passwd
 nodes:

@@ -14,6 +14,7 @@ func CreateRouter() *gin.Engine {
 	r.Use(middlewares.HandleErrors()).Use(middlewares.HandleStatics(assets.EFS))
 	api := r.Group("/api").Use(cors.Default())
 	{
+		api.GET("/title", handlers.HandleGetTitle)
 		api.GET("/nodes", handlers.HandleGetNodes)
 		api.GET("/nodes/:id/status", handlers.HandleGetNodeStatus)
 		api.POST("/nodes", gin.BasicAuth(config.GetAuthMap()), middlewares.HandleAlive(), handlers.HandlePostNodeStatus)
