@@ -4,9 +4,7 @@ WORKDIR /build
 
 COPY . /build
 
-RUN apk add --no-cache git \
-    && git submodule init && git submodule update \
-    && cd /build/assets/frontend \
+RUN cd /build/assets/frontend \
     && yarn && yarn build
 
 FROM golang:alpine as go-builder
